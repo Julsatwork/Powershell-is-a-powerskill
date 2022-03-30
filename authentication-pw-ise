@@ -1,0 +1,25 @@
+"What is your name?"
+$naam = Read-Host
+"what is the color?"
+$kleur= Read-Host
+"what is the weather"
+$weer= Read-Host
+
+
+
+
+if($naam -eq 'Dymfna' -and $kleur -eq 'Rood' -and $weer -eq 'Mooi'){
+
+    "Welkom Dymfna!!"
+
+}
+elseif($naam -eq 'Julia' -and $kleur -eq 'Groen' -and $weer -eq 'Mooi'){
+
+    "Welkom Julia!!"
+
+}
+else{
+
+     "Nope"
+
+}

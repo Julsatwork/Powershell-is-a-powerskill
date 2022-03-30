@@ -20,6 +20,6 @@ elseif($naam -eq 'Julia' -and $kleur -eq 'Groen' -and $weer -eq 'Mooi'){
 }
 else{
 
-     "Nope"
+     "Nope I do not know you"
 
 }

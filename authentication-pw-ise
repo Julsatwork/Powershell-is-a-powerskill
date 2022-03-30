@@ -10,12 +10,12 @@ $weer= Read-Host
 
 if($naam -eq 'Dymfna' -and $kleur -eq 'Rood' -and $weer -eq 'Mooi'){
 
-    "Welkom Dymfna!!"
+    "Welkom " + $naam + ' hello'
 
 }
 elseif($naam -eq 'Julia' -and $kleur -eq 'Groen' -and $weer -eq 'Mooi'){
 
-    "Welkom Julia!!"
+   "Welkom " + $naam + ' hello'
 
 }
 else{

@@ -1,0 +1,15 @@
+"Guess the number between 1 and 10!"
+[int]$number = Read-Host
+
+[int]$two = 2
+
+while($number -gt $two ){
+
+
+"your guess " + $number +" is too high, guess again"
+
+[int]$number = read-host
+
+}
+
+'YESS THAT WAS THE NUMBER ' +$two

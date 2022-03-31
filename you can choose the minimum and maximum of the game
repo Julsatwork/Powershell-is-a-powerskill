@@ -1,0 +1,57 @@
+
+'How many guesses do you need?'
+$guesses = Read-Host
+'this many guesses ' + $guesses
+
+'what minimum?'
+
+$min = Read-Host
+
+'what maximum?'
+
+$max = Read-Host
+
+
+
+[int]$number = Get-Random -Minimum $min -Maximum $max
+
+"Guess the number between 1 and 10!"
+
+[int]$guessnum = Read-Host
+
+
+$guesses = $guesses - 1
+
+while($guessnum -ne $number -and $guesses -gt 0){
+
+    if($guessnum -gt $number){
+    
+        'sorry your number is too high, you guessed ' + $guessnum
+        'you have ' + $guesses  +' guesses'
+    
+    }
+
+    if($guessnum -lt $number ){
+    
+        'sorry your number is too low, you guessed ' + $guessnum
+        'you have ' + $guesses +' guesses'
+    }
+    'guess again'
+    [int]$guessnum = Read-Host
+
+    
+    $guesses = $guesses - 1
+    
+}
+
+if($guessnum -eq $number){
+
+'yessss well done is ' + $number +" and you number of guesses is " + ($guesses)
+
+}
+else{
+
+'you lost :(:(, the number was ' + $number
+
+}
+

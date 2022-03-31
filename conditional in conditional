@@ -1,0 +1,35 @@
+'WHAT IS YOUR NAME?'
+$name = Get-ADUser -Identity (read-host) -properties 'department'
+
+if($name.Department -eq 'manager'){
+    "are you sure you want to change it?"
+    $ans= Read-Host
+
+        if($ans -eq 'y' -or 'yes'){ 
+    
+           Set-ADUser -Identity $name -Department 'hr'
+           'there ya go ' + $name.Department 
+    
+        }
+        else{
+        
+            'okay then no'
+        }
+   
+}
+elseif($NAME.Department -eq 'hr'){
+    "are you sure you want to change it?"
+    $ans= Read-Host
+
+        if($ans -eq 'y' -or 'yes'){ 
+    
+           Set-ADUser -Identity $name -Department 'manager'
+            'there ya go ' + $name.Department 
+    
+        }
+        else{
+        
+            'okay then no'
+        }  
+   
+}

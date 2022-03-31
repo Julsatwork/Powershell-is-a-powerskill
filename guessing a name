@@ -1,3 +1,5 @@
+'How many guesses do you need?'
+$guesses = Read-Host
 
 [int]$number = Get-Random -Minimum 1 -Maximum 10
 
@@ -5,7 +7,6 @@
 
 [int]$guessnum = read-host
 
-[int]$guesses = 3
 
 $guesses = $guesses - 1
 
@@ -38,7 +39,6 @@ if($guessnum -eq $number){
 }
 else{
 
-'you lost :(:('
+'you lost :(:(, the number was ' + $number
 
 }
-

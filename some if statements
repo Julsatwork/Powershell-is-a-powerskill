@@ -1,0 +1,73 @@
+code to change the departments of users
+
+
+'WHAT IS YOUR NAME?'
+$name = Get-ADUser -Identity (read-host) -properties 'department'
+
+
+
+if($name.Department -eq 'manager'){
+
+    "changing to hr"
+   Set-ADUser -Identity $name -Department 'hr'
+   $name.Department
+}
+elseif($NAME.Department -eq 'hr'){
+    
+    "changing to manager"
+   Set-ADUser -Identity $name -Department 'manager'
+   $name.Department
+}
+
+
+
+-------------------------------------------------
+Code to enable users
+
+
+'WHAT IS YOUR NAME?'
+$name = Get-ADUser -Identity (read-host) 
+
+
+if($name.Enabled -eq $true){
+
+
+    Disable-ADAccount -Identity $name.Name
+    $name
+
+}
+elseif($name.Enabled -eq $false){
+    
+    Enable-ADAccount -Identity $name.name
+    $name
+
+}
+------------------------------------
+mvoing users from one OU to another
+'WHAT IS YOUR NAME?'
+$name = Get-ADUser -Identity (read-host) -Properties *
+
+
+
+if($name.department -eq "HR" ){
+
+
+    Move-ADObject $name -TargetPath "OU=manager,DC=Contoso,DC=com"
+   
+
+}
+elseif($name.department -eq "manager" ){
+
+
+    Move-ADObject $name -TargetPath "OU=HR,DC=Contoso,DC=com"
+    
+
+}
+else{
+
+'i do not work'
+
+}
+
+$name.DistinguishedName
+

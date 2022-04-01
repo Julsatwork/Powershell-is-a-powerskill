@@ -1,0 +1,25 @@
+    'What service do you want to stop?'
+
+
+    $service = Get-Service -Name (Read-Host)
+
+
+while($true){
+
+    if($service.Status -eq 'Stopped'){
+
+        'stopped'
+        $service.Refresh()
+
+    }
+    if($service.Status -eq 'Running'){
+
+        'running'
+        $service.Refresh()
+        break
+
+    }
+    sleep -Seconds 1
+   
+
+}

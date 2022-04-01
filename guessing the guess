@@ -1,0 +1,68 @@
+$turns = @()
+
+
+'How many guesses do you need?'
+$guesses = Read-Host
+
+[int]$number = Get-Random -Minimum 1 -Maximum 10
+
+"Guess the number between 1 and 10!"
+
+[int]$guessnum = read-host
+
+
+
+$guesses = $guesses - 1
+
+
+
+
+while($guessnum -ne $number -and $guesses -gt 0){
+    
+    $turns += $guessnum
+    if($guessnum -gt $number ){
+    
+        'sorry your number is too high, you guessed ' + $guessnum +' you have ' + $guesses  +' guesses I ALLOW YOU TO TRY AGAIN'   
+    
+    }
+    
+   
+    if($guessnum -lt $number ){
+    
+        'sorry your number is too low, you guessed ' + $guessnum+ ' you have ' + $guesses +' guesses, I ALLOW YOU TO TRY AGAIN'
+    }
+
+
+    
+    [int]$guessnum = Read-Host
+
+    
+    $guesses = $guesses - 1
+    $turns += $guessnum
+
+    if($turns -contains $guessnum){
+    $guesses = $guesses + 1
+    
+    'YOU ALREADY GUESSED THIS TRY AGAIN, NOW YOU HAVE ' +  $guesses + ' GUESSES STILL,I ALLOW YOU TO TRY AGAIN'
+     
+    }
+    
+    
+    [int]$guessnum = Read-Host
+    $guesses = $guesses - 1
+     $turns += $guessnum
+}
+
+
+
+
+if($guessnum -eq $number){
+
+'yessss well done is ' + $number +" and you number of guesses is " + ($guesses)
+
+}
+else{
+
+'you lost :(:(, the number was ' + $number
+
+}

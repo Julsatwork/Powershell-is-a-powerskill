@@ -1,0 +1,29 @@
+$workers = Get-Content -Path C:\hr.txt
+
+
+foreach($item in $workers){
+
+    New-ADUser -Name $item -AccountPassword (ConvertTo-SecureString 'p@sw0rd' -AsPlainText -Force) -Enabled $true
+
+
+
+}
+
+
+
+----------------------------
+
+$workers = Get-Content -Path C:\Files\HR.txt
+ 
+
+
+foreach($item in $workers){
+    
+    New-LocalUser -name $item  -Description 'sales'  
+
+
+}
+
+
+Get-LocalUser -name *
+

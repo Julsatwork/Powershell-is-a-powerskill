@@ -1,0 +1,41 @@
+$day= (Get-Date).DayOfWeek
+
+
+
+while($day -ne 'Tuesday'){
+
+    'Is not Tuesday, it is still ' + $day
+    "L'ets change that"
+
+    $day= (Get-Date -Year 2022 -Month 4 -Day 5).DayOfWeek
+
+    
+}
+
+'It is Tuesday '
+
+
+
+
+$day= (Get-Date).DayOfWeek
+
+
+
+while($day -ne 'Tuesday'){
+
+        
+'Is not Tuesday, it is still ' + $day
+        
+ sleep -Seconds 1  
+ $day.Refresh()
+
+}
+
+    
+ if($day -eq 'Tuesday'){
+    
+        'It is Tuesday '
+    
+ }
+
+    

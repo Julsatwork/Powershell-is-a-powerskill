@@ -1,0 +1,26 @@
+new-item -name "destination" -path 'c:\" -itemtype 'directory'
+new-item -name "docs" -path 'c:\destination" -itemtype 'directory'
+new-item -name "images" -path 'c:\destinaton\docs" -itemtype 'directory'
+
+$array=get-children -path "c:\source"
+
+
+foreach($item in $array){
+if($item.Extension -eq '.bmp'){
+
+
+copy-item "c:\source\$item" -destination 'c:\destinaton\docs\images" -force
+}
+
+elseif($item.Extension -eq '.txt'){
+
+
+copy-item "c:\source\$item" -destination 'c:\destinaton\docs" -force
+}
+elseif($item.Extension -eq '.docx'){
+
+
+copy-item "c:\source\$item" -destination 'c:\destinaton" -force
+}
+
+}
